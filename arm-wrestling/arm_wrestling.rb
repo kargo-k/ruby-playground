@@ -1,7 +1,6 @@
 # //Given the lifting strength of the arms of two people.
 # //Determine the results of a arm wrestling match between the two
 # //[leftArm,rightArm]
-require 'pry'
 playerOne = [10,13]
 playerTwo = [11,9]
 
@@ -20,10 +19,7 @@ def wrestle(playerOne_a, playerTwo_a)
 end
 
 wrestle(playerOne, playerTwo)
-binding.pry
-
 wrestle([11,10],[11,9])
-binding.pry
 
 # //in: playerOne,PlayerTwo
 # //out: Left Arm winner, playerTwo
