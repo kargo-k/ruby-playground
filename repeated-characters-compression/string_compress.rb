@@ -11,7 +11,7 @@ def char_compress2(str)
     str.each_with_index do |l, i|
         if l != str[i+1]
             output += "#{l}#{i+1-j}"
-            j += i+1-j
+            j = str[0..i].length
         end
     end
     output
