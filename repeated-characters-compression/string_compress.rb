@@ -3,26 +3,21 @@
 #out: 'a2b1c6a4'
 require 'pry'
 
-def char_compress(str)
-    splits = []
-    flag = 0
-    while flag == 0
-        for i in 0..str.length - 2
-            if str[i] != str[i+1]
-                splits << "#{str[0]}#{str[0..i].length}"
-                str = str[i+1..-1]
-                break
-            end
-            if i == str.length-2
-                splits << "#{str[0]}#{str[0..-1].length}"
-                flag = 1
-            end
+##a better solution than what I submitted the first time
+def char_compress2(str)
+    str = str.split(//)
+    output = ""
+    j = 0
+    str.each_with_index do |l, i|
+        if l != str[i+1]
+            output += "#{l}#{i+1-j}"
+            j += i+1-j
         end
     end
-    splits.join
+    output
 end
 
 str = "aabccccccaaaa"
-output = char_compress(str)
+output2 = char_compress2(str)
 binding.pry
 0
