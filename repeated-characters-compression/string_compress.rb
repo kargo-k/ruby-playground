@@ -1,9 +1,8 @@
-
 #in: 'aabccccccaaaa'
 #out: 'a2b1c6a4'
 require 'pry'
 
-##a better solution than what I submitted the first time
+## improving my solution
 def char_compress2(str)
     str = str.split(//)
     output = ""
@@ -17,7 +16,15 @@ def char_compress2(str)
     output
 end
 
+## from stack overflow, user Eric Duminil
+def compress(str)
+    output = str.chars.chunk{|x| x}.map do |x, xx| 
+        xx.size > 1 ? "#{x}#{xx.size}" : x
+    end
+    output.join
+end
+
 str = "aabccccccaaaa"
 output2 = char_compress2(str)
-binding.pry
+output3 = compress(str)
 0
