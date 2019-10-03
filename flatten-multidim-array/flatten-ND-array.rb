@@ -18,7 +18,5 @@ end
 output
 
 
-
-
 binding.pry
 0
